@@ -6,6 +6,7 @@ import { ChildComponent } from './child/child.component';
 import { FormsModule } from '@angular/forms';
 import { InvertedParentComponent } from './inverted-parent/inverted-parent.component';
 import { InvertedChildComponent } from './inverted-child/inverted-child.component';
+import { RouterModule } from '@angular/router';
 
 
 @NgModule({
@@ -18,7 +19,12 @@ import { InvertedChildComponent } from './inverted-child/inverted-child.componen
   ],
   imports: [
     CommonModule,
-    FormsModule
-  ]
+    FormsModule,
+    RouterModule.forChild([{
+      path: '',
+      component: Exercise2Component
+    }])
+  ],
+  exports: [RouterModule]
 })
 export class Exercise2Module { }

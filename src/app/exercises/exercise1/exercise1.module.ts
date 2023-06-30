@@ -19,6 +19,7 @@ import { PasswordStrengthDirective } from './password-strength.directive';
       path: '',
       component: Exercise1Component
     }])
-  ]
+  ],
+  exports: [RouterModule]
 })
 export class Exercise1Module { }
