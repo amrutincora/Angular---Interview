@@ -1,0 +1,14 @@
+import { Component } from '@angular/core';
+
+@Component({
+  selector: 'app-inverted-parent',
+  templateUrl: './inverted-parent.component.html',
+  styleUrls: ['./inverted-parent.component.css']
+})
+export class InvertedParentComponent {
+  textFromChild: string = '';
+
+  onTextReceived(text:string){
+    this.textFromChild = text;
+  }
+}

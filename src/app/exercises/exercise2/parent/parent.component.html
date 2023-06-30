@@ -1,0 +1,8 @@
+<div class="row">
+    <div class="col-xs-12">
+        <input type="text" class="form-control" name="parentfield" [(ngModel)]="parentfield"><br><br>
+        <button class="btn ntn-primary" type="button" (click)="onSubmit()">Submit</button>
+    </div>
+    <hr>
+    <app-child [text]="toChildComponent"></app-child>
+</div>
