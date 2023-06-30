@@ -20,3 +20,32 @@
 <!--Do Not touch the code above this line!-->
 <hr/>
 <span>YOUR CODE HERE!</span>
+<div class="row">
+  <div class="col-xs-12">
+    <form (ngSubmit)="onSubmit()" #f="ngForm">
+      <div class="alert-danger" style="background-color: red;" *ngIf="!f.valid && f.touched">
+        Form has errors
+      </div>
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" id="name" class="form-control" ngModel name="name" required #name="ngModel">
+        <span class="alert-danger" *ngIf="!name.valid && name.touched">Name is required</span>
+      </div>
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" class="form-control" ngModel name="email" required email #email="ngModel">
+        <span class="alert-danger" *ngIf="!email.valid && email.touched && email.errors && email.errors['required']">Email is required</span>
+        <span class="alert-danger" *ngIf="!email.valid && email.touched && email.errors && email.errors['email']">Email is not valid</span>
+      </div>
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" id="password" class="form-control" ngModel name="password" required passwordStrength #password="ngModel">
+        <span class="alert-danger" *ngIf="!password.valid && password.touched && password.errors && password.errors['required']">Password is required</span>
+        <span class="alert-danger" *ngIf="!password.valid && password.touched && password.errors && password.errors['passwordStrength']">
+          Password should be of 4 to 8 characters with atleast one special character in it
+        </span>
+      </div>
+      <button class="btn btn-primary" type="submit" [disabled]="!f.valid">Submit</button>
+    </form>
+  </div>
+</div>

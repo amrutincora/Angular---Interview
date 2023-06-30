@@ -7,4 +7,9 @@ import { Component } from '@angular/core';
 })
 export class Exercise1Component {
 
+
+  onSubmit(){
+    
+  }
+
 }
